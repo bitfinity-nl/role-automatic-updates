@@ -29,7 +29,15 @@
     name: unattended-upgrades
     enabled: yes
 
-# - name: "Configure unattended-upgrades service"
+- name: "Configure unattended-upgrades service"
+  ansible.builtin.replace:
+    path: /etc/apt/apt.conf.d/50unattended-upgrades
+    regexp: "{{ item.find }}"
+    replace: "{{ item.replace }}"
+    backup: true
+  with_items:
+    - { find: '', replace: '', desc: '' }
+
 # - name: "Enable E-mail notifications"
     
 - name: "Enable automatic updates"
