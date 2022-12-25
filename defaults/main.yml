@@ -1,5 +1,15 @@
 ---
-
+# Title: role-automatic-updates
+#
+# Author: Bitfinity / L. Rutten
+# Owener: Bitfinity / L. Rutten
+#
+# File: handlers/main.yml
+#
+# Description:
+#   This role contains the tasks for configuring
+#   automatic updates for different server.
+#
 
 
 # -- Defaults for /etc/apt/apt.conf.d/20auto-upgrade --
