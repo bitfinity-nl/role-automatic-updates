@@ -10,9 +10,6 @@
 #   This role contains the tasks for configuring
 #   automatic updates for different server.
 #
-# Source(s):
-#   - https://linuxopsys.com/topics/ubuntu-automatic-updates
-#
 - name: "Include tasks/ubuntu/01-automatic-updates-v1.yml"
   include_tasks: tasks/ubuntu/01-automatic-updates-v1.yml
   when:
