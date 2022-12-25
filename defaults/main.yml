@@ -23,3 +23,15 @@
 # 
 apt_update_package_list : '1'
 apt_unattended_upgrade  : '1'
+
+# -- Defaults for /etc/apt/apt.conf.d/50unattended-upgrade --
+#
+# Variable(s):
+#   apt_update_package_list : '1'     # 1 = enabled, 2 = disabled;
+#   apt_unattended_upgrade  : '1'     # 1 = enabled, 2 = disabled;
+#
+# Description:
+#   These default settings enables automatic upgrades.
+# 
+
+#//Unattended-Upgrade::Automatic-Reboot-Time "02:00";
