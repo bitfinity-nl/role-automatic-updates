@@ -1,0 +1,20 @@
+---
+# Title: role-automatic-updates
+#
+# Author: Bitfinity / L. Rutten
+# Owener: Bitfinity / L. Rutten
+#
+# File: tasks/main.yml
+#
+# Description:
+#   This role contains the tasks for configuring
+#   automatic updates for different server.
+#
+# Source(s):
+#   - https://linuxopsys.com/topics/ubuntu-automatic-updates
+#
+- name: "Include tasks/ubuntu/01-automatic-updates-v1.yml"
+  include_tasks: tasks/ubuntu/01-automatic-updates-v1.yml
+  when:
+    - ansible_distribution_version == "20.04"
+    - ansible_architecture == "x86_64"
