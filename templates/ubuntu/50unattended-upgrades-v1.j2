@@ -95,7 +95,7 @@ Unattended-Upgrade::Automatic-Reboot "{{ apt_automatic_reboot }}";
 
 // Automatically reboot even if there are users currently logged in
 // when Unattended-Upgrade::Automatic-Reboot is set to true
-Unattended-Upgrade::Automatic-Reboot-WithUsers "{{ apt-automatic_reboot_withusers }}";
+Unattended-Upgrade::Automatic-Reboot-WithUsers "{{ apt_automatic_reboot_withusers }}";
 
 // If automatic reboot is enabled and needed, reboot at the specific
 // time instead of immediately
