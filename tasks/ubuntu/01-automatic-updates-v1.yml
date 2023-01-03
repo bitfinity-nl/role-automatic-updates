@@ -36,8 +36,6 @@
     owner: root
     group: root
     mode: '0644'
-
-# - name: "Enable E-mail notifications"
     
 - name: "Enable automatic updates"
   ansible.builtin.template:
