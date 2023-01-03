@@ -4,7 +4,7 @@
 # Author: Bitfinity / L. Rutten
 # Owner: Bitfinity / L. Rutten
 #
-# File: tasks/ubuntu/00-postfix.yml
+# File: tasks/ubuntu/01-postfix.yml
 #
 # Description:
 #   This role contains the tasks for configuring
