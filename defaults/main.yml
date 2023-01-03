@@ -49,3 +49,22 @@ apt_automatic-reboot               : 'true'
 apt-automatic-reboot-withusers     : 'true'
 apt_automatic-reboot-time          : '04:00'
 
+
+# -- Defaults for /etc/postfix/main.cf --
+#
+# Variable(s):
+#   postfix_relay_host     : 'smtp.example.com'  # Url or IP to smtp server;
+#   postfix_relay_port     : '587'               # Port of the smtp server;
+#   postfix_relay_username : 'user'
+#   postfix_relay_password : 'Password' 
+#
+# Description:
+#   These defaults are the settings for an smtp server.
+#
+# Source(s): 
+#   - https://devanswers.co/postfix-external-smtp-server/
+#
+postfix_relay_host     : 'smtp.example.com'
+postfix_relay_port     : '587'
+postfix_relay_username : 'user'
+postfix_relay_password : 'Password' 
