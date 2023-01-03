@@ -42,12 +42,12 @@ apt_unattended_upgrade  : '1'
 #
 apt_mail                           : ''
 apt_mailreport                     : 'on-change'
-apt_remove-unused-kernel-packages  : 'true'
-apt_remove-new-unused-dependencies : 'true'
-apt_remove-unused-dependencies     : 'false'
-apt_automatic-reboot               : 'true'
-apt-automatic-reboot-withusers     : 'true'
-apt_automatic-reboot-time          : '04:00'
+apt_remove_unused_kernel_packages  : 'true'
+apt_remove_new_unused_dependencies : 'true'
+apt_remove_unused_dependencies     : 'false'
+apt_automatic_reboot               : 'true'
+apt-automatic_reboot_withusers     : 'true'
+apt_automatic_reboot_time          : '04:00'
 
 
 # -- Defaults for /etc/postfix/main.cf --
