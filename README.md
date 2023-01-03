@@ -7,7 +7,7 @@ Example(s)
 
 
 ```
-- hosts: zabbix-server
+- hosts: server
   become: yes
 
   vars:
