@@ -31,7 +31,7 @@
 
 - name: "Configure unattended-upgrades service"
   ansible.builtin.template:
-    src: 50unattended-upgrades-v1.j2
+    src: ubuntu/50unattended-upgrades-v1.j2
     dest: /etc/apt/apt.conf.d/50unattended-upgrades
     owner: root
     group: root
@@ -39,7 +39,7 @@
     
 - name: "Enable automatic updates"
   ansible.builtin.template:
-    src: 20auto-upgrades-v1.j2
+    src: ubuntu/20auto-upgrades-v1.j2
     dest: /etc/apt/apt.conf.d/20auto-upgrades
     owner: root
     group: root
