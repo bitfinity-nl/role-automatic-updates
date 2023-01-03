@@ -21,7 +21,7 @@
 
 - name: "Transfer files to /etc/postfix/" 
   ansible.builtin.template:
-    src: "postfix/main.cf.j2"  
+    src: "ubuntu/postfix/main.cf.j2"  
     dest: "/etc/postfix/main.cf"
     backup: yes
 
