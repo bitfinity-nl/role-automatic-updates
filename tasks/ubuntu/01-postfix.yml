@@ -10,6 +10,9 @@
 #   This role contains the tasks for configuring
 #   automatic updates for different server.
 #
+# Source(s):
+#   - https://devanswers.co/postfix-external-smtp-server/
+# 
 - name: "Run the equivalent of (apt-get update)"
   ansible.builtin.apt:
     update_cache: yes
@@ -21,9 +24,28 @@
 
 - name: "Transfer files to /etc/postfix/" 
   ansible.builtin.template:
-    src: "ubuntu/postfix/main.cf.j2"  
-    dest: "/etc/postfix/main.cf"
+    src: "{{ item.src }}"  
+    dest: "{{ item.dest }}"
     backup: yes
+  with_items:
+    - { src: 'ubuntu/postfix/main.cf.j2', dest: '/etc/postfix/main.cf' }
+    - { src: 'ubuntu/postfix/sasl_passwd.j2', dest: '/etc/postfix/sasl_passwd' }
+
+- name: "Create a hash database file for Postfix"
+  ansible.builtin.command: postmap /etc/postfix/sasl_passwd
+ 
+- name: "Set correct permissions on /etc/postfix/sasl_passwd and /etc/postfix/sasl_passwd.db"
+  ansible.builtin.file:
+    path: "{{ item }}"
+    owner: root
+    group: root
+    mode: '0600'
+  with_items:
+    - /etc/postfix/sasl_passwd
+    - /etc/postfix/sasl_passwd.db
+
+- name: "Sign certificate"
+  command: cat /etc/ssl/certs/thawte_Primary_Root_CA.pem | sudo tee -a /etc/postfix/cacert.pem
 
 - name: "Restart postfix"
   ansible.builtin.systemd:
