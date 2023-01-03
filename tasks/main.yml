@@ -11,7 +11,7 @@
 #   automatic updates for different server.
 #
 - name: "Include tasks/ubuntu/01-postfix.yml"
-  include_tasks: tasks/ubuntu/01-postfix.yml.yml
+  include_tasks: tasks/ubuntu/01-postfix.yml
   when:
     - ansible_distribution_version == "22.04"
     - ansible_architecture == "x86_64"
