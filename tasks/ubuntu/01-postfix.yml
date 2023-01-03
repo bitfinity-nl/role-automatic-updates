@@ -45,7 +45,7 @@
     - /etc/postfix/sasl_passwd.db
 
 - name: "Sign certificate"
-  command: cat /etc/ssl/certs/thawte_Primary_Root_CA.pem | sudo tee -a /etc/postfix/cacert.pem
+  raw: cat /etc/ssl/certs/thawte_Primary_Root_CA.pem | sudo tee -a /etc/postfix/cacert.pem
 
 - name: "Restart postfix"
   ansible.builtin.systemd:
