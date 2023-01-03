@@ -1,5 +1,5 @@
 ---
-# Title: role-automatic-updates
+# Title: Postfix 
 #
 # Author: Bitfinity / L. Rutten
 # Owner: Bitfinity / L. Rutten
@@ -8,7 +8,7 @@
 #
 # Description:
 #   This role contains the tasks for configuring
-#   automatic updates for different server.
+#   Postfix for sending mails via (External) SMTP server.
 #
 # Source(s):
 #   - https://devanswers.co/postfix-external-smtp-server/
