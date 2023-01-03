@@ -11,7 +11,7 @@ Example(s)
   become: yes
 
   vars:
-    # -- roles/role-automatic-updates --
+    # -- roles/role-automatic-updates - 02-automatic-updates-v1.yml --
     apt_update_package_list            : '1'
     apt_unattended_upgrade             : '1'
     apt_mail                           : ''
@@ -22,6 +22,12 @@ Example(s)
     apt_automatic-reboot               : 'true'
     apt-automatic-reboot-withusers     : 'true'
     apt_automatic-reboot-time          : '04:00'    
+
+    # -- roles/role-automatic-updates - tasks/ubuntu/01-postfix.yml --
+    postfix_relay_host                 : 'smtp.example.com'
+    postfix_relay_port                 : '587'
+    postfix_relay_username             : 'user'
+    postfix_relay_password             : 'Password' 
 
   roles:
     - role-automatic-updates
