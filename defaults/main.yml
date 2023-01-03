@@ -27,11 +27,20 @@ apt_unattended_upgrade  : '1'
 # -- Defaults for /etc/apt/apt.conf.d/50unattended-upgrade --
 #
 # Variable(s):
-#   apt_update_package_list : '1'     # 1 = enabled, 2 = disabled;
-#   apt_unattended_upgrade  : '1'     # 1 = enabled, 2 = disabled;
+#   apt_remove-unused-kernel-packages  : 'true'   # Remove unused automatically installed kernel-related packages ("true" or "false");
+#   apt_remove-new-unused-dependencies : 'true'   # Do automatic removal of newly unused dependencies after the upgrade ("true" or "false");
+#   apt_remove-unused-dependencies     : 'false'  # Do automatic removal of unused packages after the upgrade (equivalent to apt-get autoremove) ("true" or "false");
+#   apt_automatic-Reboot               : 'true'   # Automatically reboot *WITHOUT CONFIRMATION* if the file /var/run/reboot-required is found after the upgrade ("true" or "false");
+#   apt-automatic-reboot-withusers     : 'true'   # Automatically reboot even if there are users currently logged in ("true" or "false");
+#   apt_automatic-reboot-time          : '04:00'  # If automatic reboot is enabled and needed, reboot at the specific time instead of immediately;
 #
 # Description:
 #   These default settings enables automatic upgrades.
-# 
+#
+apt_remove-unused-kernel-packages  : 'true'
+apt_remove-new-unused-dependencies : 'true'
+apt_remove-unused-dependencies     : 'false'
+apt_automatic-reboot               : 'true'
+apt-automatic-reboot-withusers     : 'true'
+apt_automatic-reboot-time          : '04:00'
 
-#//Unattended-Upgrade::Automatic-Reboot-Time "02:00";
