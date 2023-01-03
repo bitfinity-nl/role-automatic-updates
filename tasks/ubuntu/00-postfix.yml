@@ -1,0 +1,33 @@
+---
+# Title: role-automatic-updates
+#
+# Author: Bitfinity / L. Rutten
+# Owner: Bitfinity / L. Rutten
+#
+# File: tasks/ubuntu/00-postfix.yml
+#
+# Description:
+#   This role contains the tasks for configuring
+#   automatic updates for different server.
+#
+- name: "Run the equivalent of (apt-get update)"
+  ansible.builtin.apt:
+    update_cache: yes
+    
+- name: "Install applications"
+  ansible.builtin.apt:
+    pkg:
+    - mailutils
+
+- name: "Transfer files to /etc/postfix/" 
+  ansible.builtin.template:
+    src: "main.cf.j2"  
+    dest: "/etc/postfix/main.cf"
+    backup: yes
+
+- name: "Restart postfix"
+  ansible.builtin.systemd:
+    name: postfix
+    state: restarted
+    daemon_reload: yes
+    enabled: yes
