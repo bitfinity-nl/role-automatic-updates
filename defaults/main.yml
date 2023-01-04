@@ -28,7 +28,7 @@ apt_unattended_upgrade  : '1'
 # -- Defaults for /etc/apt/apt.conf.d/50unattended-upgrade --
 #
 # Variable(s):
-#   apt_mail                           : ''           # Send email to this address for problems or packages upgrades. If empty or unset then no email is sent;
+#   apt_mailreport_rcpt                : ''           # Send email to this address for problems or packages upgrades. If empty or unset then no email is sent;
 #   apt_mailreport                     : 'on-change'  # Type of email report, set this value to one of: "always", "only-on-error" or "on-change"
 #   apt_remove-unused-kernel-packages  : 'true'       # Remove unused automatically installed kernel-related packages ("true" or "false");
 #   apt_remove-new-unused-dependencies : 'true'       # Do automatic removal of newly unused dependencies after the upgrade ("true" or "false");
@@ -40,7 +40,7 @@ apt_unattended_upgrade  : '1'
 # Description:
 #   These default settings enables automatic upgrades.
 #
-apt_mail                           : ''
+apt_mailreport_rcpt                : ''
 apt_mailreport                     : 'on-change'
 apt_remove_unused_kernel_packages  : 'true'
 apt_remove_new_unused_dependencies : 'true'
