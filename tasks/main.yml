@@ -13,11 +13,14 @@
 - name: "Include tasks/ubuntu/01-postfix.yml"
   include_tasks: tasks/ubuntu/01-postfix.yml
   when:
-    - ansible_distribution_version == "22.04"
+    - ansible_distribution == "Ubuntu"
     - ansible_architecture == "x86_64"
+    #- ansible_distribution_version == "22.04"
+
     
 - name: "Include tasks/ubuntu/02-automatic-updates-v1.yml"
   include_tasks: tasks/ubuntu/02-automatic-updates-v1.yml
   when:
-    - ansible_distribution_version == "22.04"
+    - ansible_distribution == "Ubuntu"
     - ansible_architecture == "x86_64"
+    #- ansible_distribution_version == "22.04"
