@@ -44,7 +44,7 @@ apt_autoclean_interval            : '7'
 #   These default settings enables automatic upgrades.
 #
 apt_mailreport_rcpt                : ''
-apt_mailreport                     : 'on-change'
+apt_mailreport                     : 'always'
 apt_remove_unused_kernel_packages  : 'true'
 apt_remove_new_unused_dependencies : 'true'
 apt_remove_unused_dependencies     : 'false'
