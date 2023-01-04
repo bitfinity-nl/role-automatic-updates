@@ -55,8 +55,9 @@ apt_automatic_reboot_time          : '04:00'
 # Variable(s):
 #   postfix_relay_host     : 'smtp.example.com'  # Url or IP to smtp server;
 #   postfix_relay_port     : '587'               # Port of the smtp server;
-#   postfix_relay_username : 'user'
-#   postfix_relay_password : 'Password' 
+#   postfix_relay_username : 'user'              # Username of the relay account;
+#   postfix_relay_password : 'Password'          # Password of the relay account;
+#   postfix_relay_mail     : 'user@example.com'  # Mail address of the relay account;
 #
 # Description:
 #   These defaults are the settings for an smtp server.
@@ -68,4 +69,4 @@ postfix_relay_host     : 'smtp.example.com'
 postfix_relay_port     : '587'
 postfix_relay_username : 'user'
 postfix_relay_password : 'Password' 
-postfox_relay_mail     : 'user@example.com'
+postfix_relay_mail     : 'user@example.com'
