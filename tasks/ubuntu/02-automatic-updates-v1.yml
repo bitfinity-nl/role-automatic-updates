@@ -12,6 +12,7 @@
 #
 # Source(s):
 #   - https://linuxopsys.com/topics/ubuntu-automatic-updates
+#   - https://haydenjames.io/how-to-enable-unattended-upgrades-on-ubuntu-debian/
 #
 - name: "Run the equivalent of (apt-get update)"
   ansible.builtin.apt:
