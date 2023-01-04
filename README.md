@@ -14,7 +14,7 @@ Example(s)
     # -- roles/role-automatic-updates - 02-automatic-updates-v1.yml --
     apt_update_package_list            : '1'
     apt_unattended_upgrade             : '1'
-    apt_mail                           : ''
+    apt_mailreport_rcpt                : ''
     apt_mailreport                     : 'on-change'
     apt_remove-unused-kernel-packages  : 'true'
     apt_remove-new-unused-dependencies : 'true'
