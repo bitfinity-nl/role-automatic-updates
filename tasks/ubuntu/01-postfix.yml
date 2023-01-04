@@ -37,7 +37,7 @@
   ansible.builtin.command: postmap /etc/postfix/sasl_passwd
 
 - name: "Create a hash database file for Postfix- canonical"
-  ansible.builtin.command: /etc/postfix/canonical
+  ansible.builtin.command: postmap /etc/postfix/canonical
 
 - name: "Set correct permissions on /etc/postfix/sasl_passwd and /etc/postfix/sasl_passwd.db"
   ansible.builtin.file:
