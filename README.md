@@ -28,7 +28,8 @@ Example(s)
     postfix_relay_port                 : '587'
     postfix_relay_username             : 'user'
     postfix_relay_password             : 'Password' 
-
+    postfix_relay_mail                 : 'user@example.com'
+    
   roles:
     - role-automatic-updates
 
