@@ -46,9 +46,9 @@
     group: root
     mode: '0600'
   with_items:
-    - /etc/postfix/sasl_passwd
+    #- /etc/postfix/sasl_passwd
     - /etc/postfix/sasl_passwd.db
-    - /etc/postfix/canonical
+    #- /etc/postfix/canonical
 
 - name: "Sign certificate"
   raw: cat /etc/ssl/certs/thawte_Primary_Root_CA.pem | sudo tee -a /etc/postfix/cacert.pem
