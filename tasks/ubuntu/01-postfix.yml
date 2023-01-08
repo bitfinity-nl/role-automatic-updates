@@ -46,7 +46,7 @@
     group: root
     mode: '0600'
   with_items:
-    #- /etc/postfix/sasl_passwd
+    - /etc/postfix/sasl_passwd
     - /etc/postfix/sasl_passwd.db
     #- /etc/postfix/canonical
 
