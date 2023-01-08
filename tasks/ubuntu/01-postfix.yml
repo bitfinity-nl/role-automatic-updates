@@ -13,7 +13,8 @@
 # Source(s):
 #   - https://devanswers.co/postfix-external-smtp-server/
 #   - https://www.oostergo.net/node/49
-# 
+#   - https://linuxhint.com/configuring_postfix_relayhost/
+#
 - name: "Run the equivalent of (apt-get update)"
   ansible.builtin.apt:
     update_cache: yes
@@ -48,10 +49,7 @@
   with_items:
     - /etc/postfix/sasl_passwd
     - /etc/postfix/sasl_passwd.db
-    #- /etc/postfix/canonical
-
-#- name: "Sign certificate"
-#  raw: cat /etc/ssl/certs/thawte_Primary_Root_CA.pem | sudo tee -a /etc/postfix/cacert.pem
+    - /etc/postfix/canonical
 
 - name: "Restart postfix"
   ansible.builtin.systemd:
