@@ -5,7 +5,7 @@ This Ansible roles contains a set of tasks to configure automatic updates.
 Example(s)
 ----------------
 
-## Postfix relay to server with starttls
+## Postfix relay to server with "starttls"
 
 ```
 - hosts: server
@@ -39,7 +39,7 @@ Example(s)
 ```
 
 
-## Postfix relay to server with noaut 
+## Postfix relay to server with "noaut" 
 
 ```
 - hosts: server
