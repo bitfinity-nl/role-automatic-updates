@@ -69,7 +69,7 @@ apt_automatic_reboot_time          : '04:00'
 # Source(s): 
 #   - https://devanswers.co/postfix-external-smtp-server/
 #
-postfix_relay_type     : 'startls'
+postfix_relay_type     : 'starttls'
 postfix_relay_host     : 'smtp.example.com'
 postfix_relay_port     : '587'
 postfix_relay_username : 'user'
