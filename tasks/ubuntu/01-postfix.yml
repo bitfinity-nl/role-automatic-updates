@@ -26,6 +26,13 @@
 
 - name: "Transfer files to /etc/postfix/" 
   ansible.builtin.template:
+    src: "ubuntu/postfix/main-noauth.cf.j2"  
+    dest: "/etc/postfix/main.cf"
+    backup: yes
+  when:  postfix_relay_type == 'noauth' 
+  
+- name: "Transfer files to /etc/postfix/" 
+  ansible.builtin.template:
     src: "{{ item.src }}"  
     dest: "{{ item.dest }}"
     backup: yes
@@ -33,12 +40,15 @@
     - { src: 'ubuntu/postfix/main.cf.j2', dest: '/etc/postfix/main.cf' }
     - { src: 'ubuntu/postfix/sasl_passwd.j2', dest: '/etc/postfix/sasl_passwd' }
     - { src: 'ubuntu/postfix/canonical.j2', dest: '/etc/postfix/canonical' }
-    
+  when:  postfix_relay_type == 'startls' 
+
 - name: "Create a hash database file for Postfix - sasl_passwd"
   ansible.builtin.command: postmap /etc/postfix/sasl_passwd
-
+  when:  postfix_relay_type == 'startls' 
+  
 - name: "Create a hash database file for Postfix- canonical"
   ansible.builtin.command: postmap /etc/postfix/canonical
+  when:  postfix_relay_type == 'startls' 
 
 - name: "Set correct permissions on /etc/postfix/sasl_passwd and /etc/postfix/sasl_passwd.db"
   ansible.builtin.file:
@@ -50,7 +60,8 @@
     - /etc/postfix/sasl_passwd
     - /etc/postfix/sasl_passwd.db
     - /etc/postfix/canonical
-
+  when:  postfix_relay_type == 'startls' 
+  
 - name: "Restart postfix"
   ansible.builtin.systemd:
     name: postfix
