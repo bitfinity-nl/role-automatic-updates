@@ -43,7 +43,8 @@
   when:  postfix_relay_type == 'starttls' 
 
 - name: "Create a hash database file for Postfix - sasl_passwd"
-  ansible.builtin.command: postmap /etc/postfix/sasl_passwd
+  #ansible.builtin.command: postmap /etc/postfix/sasl_passwd
+  command: postmap /etc/postfix/sasl_passwd
   when:  postfix_relay_type == 'starttls' 
   
 - name: "Create a hash database file for Postfix- canonical"
