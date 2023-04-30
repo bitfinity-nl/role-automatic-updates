@@ -25,7 +25,7 @@ Example(s)
     apt_automatic-reboot-time          : '04:00'    
 
     # -- roles/role-automatic-updates - tasks/ubuntu/01-postfix.yml --
-    postfix_relay_type                 : 'startls'
+    postfix_relay_type                 : 'starttls'
     postfix_relay_host                 : 'smtp.example.com'
     postfix_relay_port                 : '587'
     postfix_relay_username             : 'user'
