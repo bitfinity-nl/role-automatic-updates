@@ -1,0 +1,18 @@
+---
+dependencies: []
+
+galaxy_info:
+  role_name: role-automatic-updates
+  author: Bitfinity / L. Rutten
+  description: Automatic updates for Ubuntu
+  company: "Bitfinity"
+  license: "license (BSD, MIT)"
+  min_ansible_version: 2.10
+  platforms:
+    - name: Ubuntu
+      versions:
+        - all
+  galaxy_tags:
+    - os
+    - ubuntu
+    - updates
