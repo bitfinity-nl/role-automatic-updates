@@ -15,6 +15,7 @@
   when:
     - ansible_distribution == "Ubuntu"
     - ansible_architecture == "x86_64"
+    - postfix_config_relay == "true"
     #- ansible_distribution_version == "22.04"
 
     
