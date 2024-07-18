@@ -56,7 +56,8 @@ apt_automatic_reboot_time          : '04:00'
 # -- Defaults for /etc/postfix/main.cf --
 #
 # Variable(s):
-#   postfix_relay_type     : 'startls'           # Type of authentication "startls" or "noauth"
+#   postfix_config_relay   : 'true'              # Configure Postix for sending mail to relay server "true" or "false";  
+#   postfix_relay_type     : 'startls'           # Type of authentication "startls" or "noauth";
 #   postfix_relay_host     : 'smtp.example.com'  # Url or IP to smtp server;
 #   postfix_relay_port     : '587'               # Port of the smtp server;
 #   postfix_relay_username : 'user'              # Username of the relay account;
@@ -69,6 +70,7 @@ apt_automatic_reboot_time          : '04:00'
 # Source(s): 
 #   - https://devanswers.co/postfix-external-smtp-server/
 #
+postfix_config_relay   : 'true'
 postfix_relay_type     : 'starttls'
 postfix_relay_host     : 'smtp.example.com'
 postfix_relay_port     : '587'
